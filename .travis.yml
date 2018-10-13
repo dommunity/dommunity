@@ -5,11 +5,15 @@ matrix:
       addons:
         apt:
           sources:
+            - sourceline: 'ppa:mhier/libboost-latest'
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
+            - boost1.67
       before_install:
         - eval "CC=gcc-8 && CXX=g++-8"
     - os: osx
       osx_image: xcode10
+      before_install:
+        - brew install boost@1.67
 script: ./autogen.sh && ./configure && make && make check
