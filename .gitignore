@@ -1,8 +1,12 @@
 *.la
 *.lo
+*.o
 .deps
 .dirstamp
 .libs/
+/src/tests
+/src/tests.log
+/src/tests.trs
 Makefile
 Makefile.in
 aclocal.m4
@@ -18,5 +22,12 @@ depcomp
 install-sh
 libdommunity-*.tar.gz
 libtool
+libtool.m4
 ltmain.sh
+ltoptions.m4
+ltsugar.m4
+ltversion.m4
+lt~obsolete.m4
 missing
+test-driver
+test-suite.log
