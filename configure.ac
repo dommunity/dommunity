@@ -8,9 +8,6 @@ AM_PROG_AR
 
 AX_CXX_COMPILE_STDCXX([17], noext, mandatory)
 
-AX_BOOST_BASE([1.67.0])
-AX_BOOST_UNIT_TEST_FRAMEWORK
-
 LT_INIT([disable-static])
 
 AC_CONFIG_FILES([
