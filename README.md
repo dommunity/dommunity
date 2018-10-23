@@ -12,7 +12,7 @@ libdommunity is a cross-platform C++ library for accessing Dommunity network. It
 Build and run unit tests:
 
 ```sh
-./autogen.sh && configure && make && make check
+./autogen.sh && ./configure && make && make check
 ```
 
 If you want to install into your system, run:
