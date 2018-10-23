@@ -1,1 +1,3 @@
-nobase_include_HEADERS = dommunity/node/seed_nodes.hpp
+nobase_include_HEADERS = \
+	dommunity/entity.hpp \
+	dommunity/node/seed_nodes.hpp
