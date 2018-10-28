@@ -4,6 +4,7 @@
 .deps
 .dirstamp
 .libs/
+.vscode/
 /src/tests
 /src/tests.log
 /src/tests.trs
