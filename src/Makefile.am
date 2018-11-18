@@ -6,7 +6,7 @@ libdommunity_la_LDFLAGS = -version-info 0:0:0
 libdommunity_la_SOURCES = \
 	chain/chain.cpp \
 	chain/storage.cpp \
-	entity.cpp \
+	entity/entity.cpp \
 	node/seed_nodes.cpp
 
 check_PROGRAMS = tests

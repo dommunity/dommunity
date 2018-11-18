@@ -1,7 +1,7 @@
-#ifndef DOMMUNITY_ENTITY_HPP_INCLUDED
-#define DOMMUNITY_ENTITY_HPP_INCLUDED
+#ifndef DOMMUNITY_ENTITY_ENTITY_HPP_INCLUDED
+#define DOMMUNITY_ENTITY_ENTITY_HPP_INCLUDED
 
-namespace dommunity {
+namespace dommunity::entity {
 	class entity {
 	public:
 		virtual ~entity() noexcept;
@@ -14,4 +14,4 @@ namespace dommunity {
 	};
 }
 
-#endif // DOMMUNITY_ENTITY_HPP_INCLUDED
+#endif // DOMMUNITY_ENTITY_ENTITY_HPP_INCLUDED
