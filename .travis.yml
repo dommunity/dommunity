@@ -1,9 +1,10 @@
 language: csharp
-solution: src/Dommunity.sln
 mono: none
-dotnet: 2.2.100
+dotnet: 2.2.0
 matrix:
   include:
     - os: linux
+      solution: src/Dommunity.sln
     - os: osx
       osx_image: xcode10.1
+      solution: src/Dommunity.sln
