@@ -1,8 +1,7 @@
 language: csharp
 mono: none
-dotnet: 2.2
 install:
-  - nuget restore src/Dommunity.sln
+  - dotnet restore src/Dommunity.sln
 script:
   - dotnet build src/Dommunity.sln
   - dotnet test src/*.Tests
@@ -10,5 +9,7 @@ matrix:
   include:
     - os: linux
       dist: xenial
+      dotnet: 2.2
     - os: osx
       osx_image: xcode10.1
+      dotnet: 2.2.100
