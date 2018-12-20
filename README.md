@@ -1,22 +1,21 @@
-# libdommunity [![Build Status](https://travis-ci.org/dommunity/dommunity.svg?branch=master)](https://travis-ci.org/dommunity/dommunity)
+# Dommunity [![Build Status](https://travis-ci.org/dommunity/dommunity.svg?branch=master)](https://travis-ci.org/dommunity/dommunity)
 
-libdommunity is a cross-platform C++ library for accessing Dommunity network. It contain only Dommunity specific code without any platform-specific code.
+Dommunity is a set of C# libraries for accessing Dommunity network. It contain only Dommunity specific code without any platform-specific code.
 
-## Dependencies
+## Prerequisites
 
-- C++17
-- boost 1.67
+- .NET Core 2.2.0
 
-## Build instructions for *nix
+## Build instructions
 
-Build and run unit tests:
+Build:
 
 ```sh
-./autogen.sh && ./configure && make && make check
+dotnet build src/Dommunity.sln
 ```
 
-If you want to install into your system, run:
+Run unit tests:
 
 ```sh
-sudo make install
+dotnet test src/*.Tests
 ```
