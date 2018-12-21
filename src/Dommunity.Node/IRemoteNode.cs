@@ -1,9 +1,9 @@
 namespace Dommunity.Node
 {
     /// <summary>
-    /// Represent a local dommunity node.
+    /// Represent a remote dommunity node.
     /// </summary>
-    public interface INode
+    public interface IRemoteNode
     {
     }
 }
