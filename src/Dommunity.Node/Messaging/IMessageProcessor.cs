@@ -1,13 +1,14 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Dommunity.Module;
 
 namespace Dommunity.Node.Messaging
 {
     /// <summary>
     /// Processor for dommunity node's message.
     /// </summary>
-    public interface IMessageProcessor
+    public interface IMessageProcessor : IPlugin
     {
         /// <summary>
         /// Process a message and do appropriate actions.
