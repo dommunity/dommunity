@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,9 +10,9 @@ namespace Dommunity.Module
     public interface IModuleManager
     {
         /// <summary>
-        /// Gets a list of all active specified plugins.
+        /// Gets <see cref="IPluginManager"/> for this module.
         /// </summary>
-        IEnumerable<T> GetPlugins<T>() where T : IPlugin;
+        IPluginManager PluginManager { get; }
 
         /// <summary>
         /// Load a new dommunity module.
