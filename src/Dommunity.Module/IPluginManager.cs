@@ -11,11 +11,6 @@ namespace Dommunity.Module
     public interface IPluginManager
     {
         /// <summary>
-        /// Gets a list of all active specified plugins.
-        /// </summary>
-        IEnumerable<T> GetPlugins<T>() where T : IPlugin;
-
-        /// <summary>
         /// Register a new plugin.
         /// </summary>
         /// <exception cref="ArgumentNullException">
@@ -23,7 +18,7 @@ namespace Dommunity.Module
         /// is <c>null</c>.
         /// </exception>
         Task RegisterPluginAsync(
-            IPlugin plugin,
+            Type plugin,
             IEnumerable<Type> beforePlugins,
             IEnumerable<Type> afterPlugins,
             CancellationToken cancellationToken);

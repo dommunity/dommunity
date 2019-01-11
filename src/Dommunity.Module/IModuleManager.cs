@@ -10,11 +10,6 @@ namespace Dommunity.Module
     public interface IModuleManager
     {
         /// <summary>
-        /// Gets <see cref="IPluginManager"/> for this module.
-        /// </summary>
-        IPluginManager PluginManager { get; }
-
-        /// <summary>
         /// Load a new dommunity module.
         /// </summary>
         /// <exception cref="ArgumentNullException">
