@@ -14,13 +14,11 @@ namespace Dommunity.Module
         /// Register a new plugin.
         /// </summary>
         /// <exception cref="ArgumentNullException">
-        /// <paramref name="plugin"/>, <paramref name="beforePlugins"/> or <paramref name="afterPlugins"/>
-        /// is <c>null</c>.
+        /// <paramref name="beforePlugins"/> or <paramref name="afterPlugins"/> is <c>null</c>.
         /// </exception>
-        Task RegisterPluginAsync(
-            Type plugin,
+        Task RegisterPluginAsync<TPlugin, TImplementation>(
             IEnumerable<Type> beforePlugins,
             IEnumerable<Type> afterPlugins,
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken) where TImplementation : TPlugin where TPlugin : IPlugin;
     }
 }
