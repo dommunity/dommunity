@@ -10,7 +10,7 @@ namespace Dommunity.Node.Messaging
         /// <summary>
         /// Initializes a new instance of the <see cref="Message"/> class.
         /// </summary>
-        public Message(Guid id)
+        protected Message(Guid id)
         {
             this.Id = id;
         }
