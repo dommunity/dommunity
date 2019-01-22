@@ -19,5 +19,20 @@ namespace Dommunity.Node.Messaging
         /// Gets the unique identifier of the message.
         /// </summary>
         public Guid Id { get; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            return Id == ((Message)obj).Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

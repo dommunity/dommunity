@@ -34,7 +34,7 @@ namespace Dommunity.Node.Messaging
         /// Serialize a <see cref="Message"/> to binary.
         /// </summary>
         /// <returns>
-        /// A serialized message or <c>null</c> if the message cannot serialized by this serializer.
+        /// A serialized payload for the message or <c>null</c> if the message cannot serialized by this serializer.
         /// </returns>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="receiver"/> or <paramref name="message"/> is <c>null</c>.
