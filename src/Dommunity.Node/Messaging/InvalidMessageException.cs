@@ -3,7 +3,7 @@ using System;
 namespace Dommunity.Node.Messaging
 {
     /// <summary>
-    /// The exception that is thrown when a <see cref="Message"/> is not valid.
+    /// The exception that is thrown when a message is not valid.
     /// </summary>
     public class InvalidMessageException : Exception
     {

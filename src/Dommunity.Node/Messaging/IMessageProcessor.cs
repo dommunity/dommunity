@@ -14,11 +14,14 @@ namespace Dommunity.Node.Messaging
         /// Process a message and do appropriate actions.
         /// </summary>
         /// <returns>
-        /// A <see cref="Message"/> for the next processor.
+        /// A message for the next processor or <c>null</c> to stop processing and move to next message.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// <paramref name="sender"/> or <paramref name="message"/> are <c>null</c>.
+        /// <paramref name="sender"/> or <paramref name="message"/> is <c>null</c>.
         /// </exception>
-        Task<Message> RunAsync(IRemoteNode sender, Message message, CancellationToken cancellationToken);
+        /// <exception cref="InvalidOperationException">
+        /// <paramref name="message"/> is not valid for the current state.
+        /// </exception>
+        Task<object> RunAsync(IRemoteNode sender, object message, CancellationToken cancellationToken);
     }
 }

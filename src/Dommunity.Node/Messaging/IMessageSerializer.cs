@@ -12,7 +12,7 @@ namespace Dommunity.Node.Messaging
     public interface IMessageSerializer : IPlugin
     {
         /// <summary>
-        /// Deserialize a <see cref="Message"/> from binary.
+        /// Deserialize a message from binary.
         /// </summary>
         /// <returns>
         /// A deserialized message or <c>null</c> if the message cannot deserialized by this serializer.
@@ -23,7 +23,7 @@ namespace Dommunity.Node.Messaging
         /// <exception cref="InvalidMessageException">
         /// <paramref name="messageSize"/> or <paramref name="payload"/> is not valid for the message.
         /// </exception>
-        Task<Message> DeserializeAsync(
+        Task<object> DeserializeAsync(
             IRemoteNode sender,
             Guid messageId,
             int messageSize,
@@ -31,14 +31,18 @@ namespace Dommunity.Node.Messaging
             CancellationToken cancellationToken);
 
         /// <summary>
-        /// Serialize a <see cref="Message"/> to binary.
+        /// Serialize a message to binary.
         /// </summary>
         /// <returns>
-        /// A serialized payload for the message or <c>null</c> if the message cannot serialized by this serializer.
+        /// A serialized payload and identifier for the message or <c>null</c> and <see cref="Guid.Empty"/> if the
+        /// message cannot serialized by this serializer.
         /// </returns>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="receiver"/> or <paramref name="message"/> is <c>null</c>.
         /// </exception>
-        Task<byte[]> SerializeAsync(IRemoteNode receiver, Message message, CancellationToken cancellationToken);
+        Task<(Guid messageId, byte[] payload)> SerializeAsync(
+            IRemoteNode receiver,
+            object message,
+            CancellationToken cancellationToken);
     }
 }
