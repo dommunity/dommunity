@@ -7,42 +7,45 @@ using Dommunity.Module;
 namespace Dommunity.Node.Messaging
 {
     /// <summary>
-    /// A serializer for <see cref="Message"/>.
+    /// A serializer for dommunity node's message.
     /// </summary>
     public interface IMessageSerializer : IPlugin
     {
         /// <summary>
-        /// Deserialize a message from binary.
+        /// Deserialize message's payload from binary.
         /// </summary>
         /// <returns>
-        /// A deserialized message or <c>null</c> if the message cannot deserialized by this serializer.
+        /// A message with deserialized payload or <c>null</c> if the message cannot deserialized by this serializer.
         /// </returns>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="sender"/> or <paramref name="payload"/> is <c>null</c>.
         /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// <paramref name="payloadSize"/> is negative.
+        /// </exception>
         /// <exception cref="InvalidMessageException">
-        /// <paramref name="messageSize"/> or <paramref name="payload"/> is not valid for the message.
+        /// <paramref name="payloadSize"/> or <paramref name="payload"/> is not valid for the message.
         /// </exception>
         Task<object> DeserializeAsync(
             IRemoteNode sender,
             Guid messageId,
-            int messageSize,
+            int payloadSize,
             Stream payload,
             CancellationToken cancellationToken);
 
         /// <summary>
-        /// Serialize a message to binary.
+        /// Serialize message's payload to binary.
         /// </summary>
         /// <returns>
-        /// A serialized payload and identifier for the message or <c>null</c> and <see cref="Guid.Empty"/> if the
-        /// message cannot serialized by this serializer.
+        /// <c>true</c> if the payload has been serialized; otherwise <c>false</c>.
         /// </returns>
         /// <exception cref="ArgumentNullException">
-        /// <paramref name="receiver"/> or <paramref name="message"/> is <c>null</c>.
+        /// <paramref name="receiver"/>, <paramref name="message"/> or <paramref name="start"/> is <c>null</c>.
         /// </exception>
-        Task<(Guid messageId, byte[] payload)> SerializeAsync(
+        Task<bool> SerializeAsync(
             IRemoteNode receiver,
             object message,
+            StartSerializeAsync start,
             CancellationToken cancellationToken);
     }
 }
