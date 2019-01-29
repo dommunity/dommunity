@@ -9,7 +9,7 @@ namespace Dommunity.Node.Messaging
     /// References a method to be called when a message serialization need to be start.
     /// </summary>
     /// <returns>
-    /// <see cref="Stream"/> to write message payload.
+    /// <see cref="Stream"/> to write message payload. The caller must not close this stream.
     /// </returns>
     /// <exception cref="ArgumentOutOfRangeException">
     /// <paramref name="payloadSize"/> is negative.
