@@ -7,7 +7,7 @@ namespace Dommunity.Module
     /// <summary>
     /// Module system manager.
     /// </summary>
-    public interface IModuleManager
+    public interface IModuleManager : IDisposable
     {
         /// <summary>
         /// Load a new dommunity module.

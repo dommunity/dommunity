@@ -7,14 +7,17 @@ namespace Dommunity.Module
     /// <summary>
     /// Represents a dommunity module.
     /// </summary>
-    public interface IModule
+    public interface IModule : IDisposable
     {
         /// <summary>
-        /// Register all plugins for this module.
+        /// Initializes this module.
         /// </summary>
         /// <exception cref="ArgumentNullException">
-        /// <paramref name="manager"/> is <c>null</c>.
+        /// <paramref name="context"/> is <c>null</c>.
         /// </exception>
-        Task RegisterPluginsAsync(IPluginManager manager, CancellationToken cancellationToken);
+        /// <exception cref="InvalidOperationException">
+        /// The module is already initialized.
+        /// </exception>
+        Task InitializeAsync(ModuleInitializationContext context, CancellationToken cancellationToken);
     }
 }
