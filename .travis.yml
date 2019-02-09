@@ -4,7 +4,7 @@ install:
   - dotnet restore src/Dommunity.sln
 script:
   - dotnet build src/Dommunity.sln
-  - dotnet test src/*.Tests
+  - for p in src/*.Tests; do echo -e "\033[0;34mRunning tests for $p.\033[0m" && echo && dotnet test $p || exit 1 && echo; done;
 matrix:
   include:
     - os: linux

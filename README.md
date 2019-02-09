@@ -14,9 +14,3 @@ Build:
 dotnet restore src/Dommunity.sln
 dotnet build src/Dommunity.sln
 ```
-
-Run unit tests:
-
-```sh
-dotnet test src/*.Tests
-```
