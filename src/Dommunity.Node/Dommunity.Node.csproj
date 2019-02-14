@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\NuGet.props" />
+
   <ItemGroup>
     <ProjectReference Include="..\Dommunity.Module\Dommunity.Module.csproj" />
   </ItemGroup>
