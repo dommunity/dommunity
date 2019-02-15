@@ -11,6 +11,5 @@ Dommunity is a set of C# libraries for accessing Dommunity network. It contain o
 Build:
 
 ```sh
-dotnet restore src/Dommunity.sln
 dotnet build src/Dommunity.sln
 ```
