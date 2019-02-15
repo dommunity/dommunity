@@ -10,6 +10,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// </summary>
         public static void AddDommunity(this IServiceCollection services)
         {
+            services.AddDommunityBlockchain();
         }
     }
 }
