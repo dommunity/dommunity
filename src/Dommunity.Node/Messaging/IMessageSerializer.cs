@@ -2,14 +2,13 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Dommunity.Module;
 
 namespace Dommunity.Node.Messaging
 {
     /// <summary>
     /// A serializer for dommunity node's message.
     /// </summary>
-    public interface IMessageSerializer : IPlugin
+    public interface IMessageSerializer
     {
         /// <summary>
         /// Deserialize message's payload from binary.

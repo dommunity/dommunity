@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dommunity.Node\Dommunity.Node.csproj" />
-    <ProjectReference Include="..\Dommunity.Module\Dommunity.Module.csproj" />
   </ItemGroup>
 
 </Project>
