@@ -8,9 +8,12 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <summary>
         /// Adds Dommunity services to the specified <see cref="IServiceCollection"/>.
         /// </summary>
+        /// <param name="services">
+        /// The <see cref="IServiceCollection"/> to add services to.
+        /// </param>
         public static void AddDommunity(this IServiceCollection services)
         {
-            services.AddDommunityBlockchain();
+            services.AddDommunityIdentity();
         }
     }
 }
