@@ -1,17 +1,13 @@
 # Dommunity
-![Continuous Integration](https://github.com/dommunity/dommunity/workflows/Continuous%20Integration/badge.svg?branch=master&event=push)
-[![codecov](https://codecov.io/gh/dommunity/dommunity/branch/master/graph/badge.svg)](https://codecov.io/gh/dommunity/dommunity)
 
-This is a set of C# libraries for accessing Dommunity network. It contain only Dommunity specific code without any platform-specific code.
+This is a library for accessing Dommunity network. It is platform agnostic and the application that using it required to bridge with the platform by themself.
 
-## Prerequisites
+## Development
 
-- .NET Core 3.1
+### Prerequisites
 
-## Build instructions
+- Latest stable Rust
 
-Build:
+## License
 
-```sh
-dotnet build src/Dommunity.sln
-```
+MIT
